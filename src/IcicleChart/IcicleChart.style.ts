@@ -5,12 +5,10 @@ export const Container = styled.div`
 `;
 
 export const StyledRect = styled.rect<{ $highlighted: boolean }>`
-  fill: ${(props) => (props.$highlighted ? "#666" : "#aaa")};
   ${(props) =>
     props.$highlighted
       ? `
   filter:url(#shadow);
   `
       : ""}
-  stroke: none;
 `;
