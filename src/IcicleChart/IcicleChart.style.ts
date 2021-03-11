@@ -12,4 +12,5 @@ export const StyledRect = styled.rect<{ $highlighted: boolean }>`
   filter:url(#shadow);
   `
       : ""}
+  stroke: none;
 `;
