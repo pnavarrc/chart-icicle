@@ -2,6 +2,10 @@ import React from "react";
 import "./App.css";
 import IcicleChart from "./IcicleChart";
 import { household, formatCurrency } from "./data";
+import { NodeRect } from "./IcicleChart/utils";
+
+const tooltipLabel = (node: NodeRect) =>
+  `${node.data.name} ${formatCurrency(node.value || 0)}`;
 
 function App() {
   return (
@@ -11,9 +15,7 @@ function App() {
         width={600}
         height={600}
         root={household}
-        tooltipLabel={(node) =>
-          `${node.data.name} ${formatCurrency(node.value || 0)}`
-        }
+        tooltipLabel={tooltipLabel}
       />
       <h2>Education and Electricity</h2>
       <IcicleChart
@@ -23,7 +25,7 @@ function App() {
         highlightNode={(node) =>
           ["Electricity", "Education"].includes(node.data.name)
         }
-        tooltipLabel={(node) => `${node.data.name} $${node.data.value}`}
+        tooltipLabel={tooltipLabel}
       />
     </div>
   );
