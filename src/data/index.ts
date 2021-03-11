@@ -14,3 +14,6 @@ export interface BranchNode {
 export type Tree = BranchNode | LeafNode;
 
 export const household: Tree = householdJson;
+
+export const formatCurrency = (value: number) =>
+  `$${Number(value).toLocaleString()}`;
